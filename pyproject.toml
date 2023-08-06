@@ -38,5 +38,16 @@ black = "*"
 [tool.poetry.group.dev]
 optional = true
 
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+
+[tool.poetry.group.test]
+optional = true
+
 [tool.poetry.scripts]
 multibeggar-cli = "multibeggar.__main__:entry_point"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "src/multibeggar",
+]
