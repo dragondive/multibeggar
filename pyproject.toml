@@ -1,0 +1,42 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = [
+  "poetry-core",
+]
+
+[tool.poetry]
+name = "multibeggar"
+version = "0.0.0"
+description = "My hobby project to learn Python using finance investments. :)"
+license = "MIT"
+authors = [
+  "Aravind Pai <dragondive@outlook.in>",
+]
+maintainers = [
+  "Aravind Pai <dragondive@outlook.in>",
+]
+readme = "README.md"
+keywords = [
+  "multibeggar",
+  "python",
+  "finance",
+  "stock-market",
+  "investment",
+  "self-learning",
+  "mathematics",
+]
+include = [
+  "CHANGELOG.md",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.scripts]
+multibeggar-cli = "multibeggar.__main__:entry_point"
