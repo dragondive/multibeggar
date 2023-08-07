@@ -34,6 +34,7 @@ python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
 black = "*"
+prospector = { version = "*", extras = ["with-everything"] }
 
 [tool.poetry.group.dev]
 optional = true

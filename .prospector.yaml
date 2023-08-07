@@ -1,0 +1,24 @@
+strictness: veryhigh
+test-warnings: true
+doc-warnings: true
+max-line-length: 88
+
+pydocstyle:
+  disable:
+    - D203  # D203 is deprecated/removed, see: https://hg.python.org/peps/rev/9b715d8246db
+    - D213  # D213 conflicts with D212, see: https://github.com/PyCQA/pydocstyle/issues/242#issuecomment-288166773
+
+pyroma:
+  run: true
+
+vulture:
+  run: true
+
+mypy:
+  run: true
+
+bandit:
+  run: true
+
+pyright:
+  run: true
