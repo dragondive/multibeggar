@@ -11,7 +11,15 @@ from multibeggar.multibeggar import Multibeggar
     help="tuning factor for the multibeggar complexity algorithm",
     show_default=True,
 )
-def entry_point(complexity_tuning_factor):
+@click.option(
+    "--logfile",
+    type=click.Path(),
+    help="path to the logfile",
+)
+def entry_point(complexity_tuning_factor, logfile):
+    if logfile:
+        logger.add(logfile)
+
     logger.info("Hello World!")
     mb = Multibeggar(complexity_tuning_factor=complexity_tuning_factor)
 
