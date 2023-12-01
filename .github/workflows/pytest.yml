@@ -1,0 +1,22 @@
+name: pytest for multibeggar
+on: [push, workflow_dispatch]
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '>=3.8'
+
+      - name: Install poetry
+        uses: snok/install-poetry@v1
+
+      - name: Install multibeggar
+        run: poetry install --with test
+
+      - name: Run tests
+        run: poetry run python -m pytest
