@@ -44,6 +44,7 @@ optional = true
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
+coverage = "*"
 
 [tool.poetry.group.test]
 optional = true

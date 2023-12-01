@@ -19,10 +19,19 @@ jobs:
         run: poetry install --with test
 
       - name: Run tests
-        run: poetry run python -m pytest --junit-xml=test-results.xml
+        run: poetry run python -m coverage run -m pytest --junit-xml=test-results.xml
 
       - name: Display test results
-        if: always()
         uses: pmeier/pytest-results-action@main
         with:
           path: test-results.xml
+        if: always()
+
+      - name: Display coverage report
+        run: |
+          poetry run python -m coverage report --format=markdown > coverage-report.md
+          printf "%s" \
+          "# Coverage Report Summary
+
+          $(cat coverage-report.md)" >> $GITHUB_STEP_SUMMARY
+        if: always()
