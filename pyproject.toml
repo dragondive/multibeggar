@@ -49,6 +49,12 @@ coverage = "*"
 [tool.poetry.group.test]
 optional = true
 
+[tool.poetry.group.docs.dependencies]
+portray = "*"
+
+[tool.poetry.group.docs]
+optional = true
+
 [tool.poetry.scripts]
 multibeggar-cli = "multibeggar.__main__:entry_point"
 
